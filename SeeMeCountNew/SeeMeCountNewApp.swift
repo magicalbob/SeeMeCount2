@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct SeeMeCountNewApp: App {
+struct SeeMeCountNew: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

@@ -1,4 +1,4 @@
-//
+    //
 //  ContentView.swift
 //  SeeMeCountNew
 //
@@ -9,13 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+        Image("No1")
+            .resizable()
+            .frame(width: 100, height: 100)
     }
 }
 
