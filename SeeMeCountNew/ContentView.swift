@@ -21,7 +21,6 @@ struct ContentView: View {
             let radius=width/2
 
             let angle1=2*(3.142/9)*0
-            
             let x1 = centreX + radius * cos(angle1)
             let y1 = centreY + radius * sin(angle1)
             Image("No1")
@@ -30,7 +29,6 @@ struct ContentView: View {
                 .position(x:x1/10 ,y: y1/10)
             
             let angle2=2*(3.142/9)*1
-            
             let x2 = centreX + radius * cos(angle2)
             let y2 = centreY + radius * sin(angle2)
             Image("No2")
@@ -39,7 +37,6 @@ struct ContentView: View {
                 .position(x:x2/10, y:y2/10)
             
             let angle3=2*(3.142/9)*2
-            
             let x3 = centreX + radius * cos(angle3)
             let y3 = centreY + radius * sin(angle3)
             Image("No3")
@@ -48,7 +45,6 @@ struct ContentView: View {
                 .position(x:x3/10, y:y3/10)
             
             let angle4=2*(3.142/9)*3
-            
             let x4 = centreX + radius * cos(angle4)
             let y4 = centreY + radius * sin(angle4)
             Image("No4")
@@ -57,7 +53,6 @@ struct ContentView: View {
                 .position(x:x4/10, y:y4/10)
             
             let angle5=2*(3.142/9)*4
-            
             let x5 = centreX + radius * cos(angle5)
             let y5 = centreY + radius * sin(angle5)
             Image("No5")
