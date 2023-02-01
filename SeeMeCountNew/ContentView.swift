@@ -15,82 +15,82 @@ struct ContentView: View {
             let width = geometry.size.width
             let height = geometry.size.height
             
-            let centreX = height/2
-            let centreY = width/2
-            
-            let radius=width/2
+            // Row 1
+            let x1 = CGFloat(100)
+            let y1 = CGFloat(100)
 
-            let angle1=2*(3.142/9)*0
-            let x1 = centreX + radius * cos(angle1)
-            let y1 = centreY + radius * sin(angle1)
+            let x2 = (height / 2)
+            let y2 = y1
+
+            let x3 = height - 100
+            let y3 = y1
+
+            let x4 = (1.5 * height) - 200
+            let y4 = y1
+
+            
             Image("No1")
                 .resizable()
                 .frame( width: 100, height: 100)
-                .position(x:x1-50 ,y: y1-50)
-            
-            let angle2=2*(3.142/9)*1
-            let x2 = centreX + radius * cos(angle2)
-            let y2 = centreY + radius * sin(angle2)
+                .position(x:x1 ,y: y1)
+
             Image("No2")
                 .resizable()
                 .frame( width: 100, height: 100)
-                .position(x:x2-50, y:y2-50)
-            
-            let angle3=2*(3.142/9)*2
-            let x3 = centreX + radius * cos(angle3)
-            let y3 = centreY + radius * sin(angle3)
+                .position(x:x2 ,y: y2)
+
             Image("No3")
                 .resizable()
                 .frame( width: 100, height: 100)
-                .position(x:x3-50, y:y3-50)
-            
-            let angle4=2*(3.142/9)*3
-            let x4 = centreX + radius * cos(angle4)
-            let y4 = centreY + radius * sin(angle4)
+                .position(x:x3 ,y: y3)
+
             Image("No4")
                 .resizable()
                 .frame( width: 100, height: 100)
-                .position(x:x4-50, y:y4-50)
-            
-            let angle5=2*(3.142/9)*4
-            let x5 = centreX + radius * cos(angle5)
-            let y5 = centreY + radius * sin(angle5)
-            Image("No5")
-                .resizable()
-                .frame( width: 100, height: 100)
-                .position(x:x5-50, y:y5-50)
-            
-            let angle6=2*(3.142/9)*5
-            let x6 = centreX + radius * cos(angle6)
-            let y6 = centreY + radius * sin(angle6)
-            Image("No6")
-                .resizable()
-                .frame( width: 100, height: 100)
-                .position(x:x6-50, y:y6-50)
+                .position(x:x4 ,y: y4)
 
-            let angle7=2*(3.142/9)*6
-            let x7 = centreX + radius * cos(angle7)
-            let y7 = centreY + radius * sin(angle7)
+            // Row 3 (defined before Row 2)
+            let x7 = (x1 + x2) / 2
+            let y7 = width / 1.5
+
+            let x8 = (x2 + x3) / 2
+            let y8 = y7
+
+            let x9 = (x3 + x4) / 2
+            let y9 = y7
+
             Image("No7")
                 .resizable()
                 .frame( width: 100, height: 100)
-                .position(x:x7-50, y:y7-50)
+                .position(x:x7 ,y: y7)
 
-            let angle8=2*(3.142/9)*7
-            let x8 = centreX + radius * cos(angle8)
-            let y8 = centreY + radius * sin(angle8)
             Image("No8")
                 .resizable()
                 .frame( width: 100, height: 100)
-                .position(x:x8-50, y:y8-50)
-            
-            let angle9=2*(3.142/9)*8
-            let x9 = centreX + radius * cos(angle9)
-            let y9 = centreY + radius * sin(angle9)
+                .position(x:x8 ,y: y8)
+
             Image("No9")
                 .resizable()
                 .frame( width: 100, height: 100)
-                .position(x:x9-50, y:y9-50)
+                .position(x:x9 ,y: y9)
+            
+            // Row 2
+            let x5 = x1
+            let y5 = (y1 + y9) / 2
+
+            let x6 = x4
+            let y6 = y5
+
+            Image("No5")
+                .resizable()
+                .frame( width: 100, height: 100)
+                .position(x:x5 ,y: y5)
+
+            Image("No6")
+                .resizable()
+                .frame( width: 100, height: 100)
+                .position(x:x6 ,y: y6)
+
         }
     }
 }
