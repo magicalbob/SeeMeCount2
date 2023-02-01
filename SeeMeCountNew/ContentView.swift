@@ -26,7 +26,7 @@ struct ContentView: View {
             Image("No1")
                 .resizable()
                 .frame( width: 100, height: 100)
-                .position(x:x1/10+(width/2)-50 ,y: y1/10+(height/2)-50)
+                .position(x:x1-50 ,y: y1-50)
             
             let angle2=2*(3.142/9)*1
             let x2 = centreX + radius * cos(angle2)
@@ -34,7 +34,7 @@ struct ContentView: View {
             Image("No2")
                 .resizable()
                 .frame( width: 100, height: 100)
-                .position(x:x2/10+(width/2)-50, y:y2/10+(height/2)-50)
+                .position(x:x2-50, y:y2-50)
             
             let angle3=2*(3.142/9)*2
             let x3 = centreX + radius * cos(angle3)
@@ -42,7 +42,7 @@ struct ContentView: View {
             Image("No3")
                 .resizable()
                 .frame( width: 100, height: 100)
-                .position(x:x3/10+(width/2)-50, y:y3/10+(height/2)-50)
+                .position(x:x3-50, y:y3-50)
             
             let angle4=2*(3.142/9)*3
             let x4 = centreX + radius * cos(angle4)
@@ -50,7 +50,7 @@ struct ContentView: View {
             Image("No4")
                 .resizable()
                 .frame( width: 100, height: 100)
-                .position(x:x4/10+(width/2)-50, y:y4/10+(height/2)-50)
+                .position(x:x4-50, y:y4-50)
             
             let angle5=2*(3.142/9)*4
             let x5 = centreX + radius * cos(angle5)
@@ -58,7 +58,7 @@ struct ContentView: View {
             Image("No5")
                 .resizable()
                 .frame( width: 100, height: 100)
-                .position(x:x5/10+(width/2)-50, y:y5/10+(height/2)-50)
+                .position(x:x5-50, y:y5-50)
             
             let angle6=2*(3.142/9)*5
             let x6 = centreX + radius * cos(angle6)
@@ -66,7 +66,7 @@ struct ContentView: View {
             Image("No6")
                 .resizable()
                 .frame( width: 100, height: 100)
-                .position(x:x6/10+(width/2)-50, y:y6/10+(height/2)-50)
+                .position(x:x6-50, y:y6-50)
 
             let angle7=2*(3.142/9)*6
             let x7 = centreX + radius * cos(angle7)
@@ -74,7 +74,7 @@ struct ContentView: View {
             Image("No7")
                 .resizable()
                 .frame( width: 100, height: 100)
-                .position(x:x7/10+(width/2)-50, y:y7/10+(height/2)-50)
+                .position(x:x7-50, y:y7-50)
 
             let angle8=2*(3.142/9)*7
             let x8 = centreX + radius * cos(angle8)
@@ -82,7 +82,7 @@ struct ContentView: View {
             Image("No8")
                 .resizable()
                 .frame( width: 100, height: 100)
-                .position(x:x8/10+(width/2)-50, y:y8/10+(height/2)-50)
+                .position(x:x8-50, y:y8-50)
             
             let angle9=2*(3.142/9)*8
             let x9 = centreX + radius * cos(angle9)
@@ -90,7 +90,7 @@ struct ContentView: View {
             Image("No9")
                 .resizable()
                 .frame( width: 100, height: 100)
-                .position(x:x9/10+(width/2)-50, y:y9/10+(height/2)-50)
+                .position(x:x9-50, y:y9-50)
         }
     }
 }
