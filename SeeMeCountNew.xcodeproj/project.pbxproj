@@ -103,6 +103,7 @@
 			);
 			path = SeeMeCountNew;
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		3C96F230298834BE001615AD /* Preview Content */ = {
 			isa = PBXGroup;
