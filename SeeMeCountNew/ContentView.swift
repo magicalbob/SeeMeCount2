@@ -10,6 +10,8 @@ import AVFoundation
 
 var player: AVAudioPlayer?
 var correctButton = Int.random(in: 1...9)
+var correctAnimal = Int.random(in: 1...9)
+
 
 struct ContentView: View {
     var body: some View {
@@ -118,6 +120,8 @@ struct ContentView: View {
                 }
                 .position(x:x6 ,y: y6)
                 
+                let AnimalPic=String(format: "Pic%d",correctAnimal)
+                
                 VStack {
                     Spacer()
                     HStack {
@@ -126,7 +130,8 @@ struct ContentView: View {
                             ForEach(0..<3, id: \.self) { row in
                                 HStack(spacing: 10) {
                                     ForEach(0..<3, id: \.self) { col in
-                                        Image("Pic1")
+                             
+                                    Image(AnimalPic)
                                             .resizable()
                                             .frame(width: 144, height: 144)
                                     }
@@ -170,6 +175,7 @@ func doPlay() {
 
 func ResetCorrect(){
     correctButton = Int.random(in: 1...9)
+    correctAnimal = Int.random(in: 1...9)
 }
 
 struct ContentView_Previews: PreviewProvider {
