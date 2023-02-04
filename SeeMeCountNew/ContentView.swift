@@ -122,6 +122,10 @@ struct ContentView: View {
 }
 
 func DoClickButton() {
+    doPlay()
+}
+
+func doPlay() {
     guard let url = Bundle.main.url(forResource: "success01", withExtension: "mp3") else { return }
 
     do {
