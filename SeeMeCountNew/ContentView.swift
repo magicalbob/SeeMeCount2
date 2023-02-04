@@ -9,10 +9,9 @@ import SwiftUI
 import AVFoundation
 
 var player: AVAudioPlayer?
-var correctButton = 0
+var correctButton = Int.random(in: 1...9)
 
 struct ContentView: View {
-    var correctButton = Int.random(in: 1...9)
     var body: some View {
         ZStack {
             Color.black
@@ -124,7 +123,9 @@ struct ContentView: View {
 }
 
 func DoClickButton(buttonNo: Int) {
-    doPlay()
+    if buttonNo == correctButton {
+        doPlay()
+    }
 }
 
 func doPlay() {
