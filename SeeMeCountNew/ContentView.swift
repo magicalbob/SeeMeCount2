@@ -31,7 +31,6 @@ struct ContentView: View {
                 let x4 = (1.5 * height) - 200
                 let y4 = y1
                 
-                
                 Image("No1")
                     .resizable()
                     .frame( width: 100, height: 100)
