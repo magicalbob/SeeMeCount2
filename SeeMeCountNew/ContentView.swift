@@ -130,10 +130,11 @@ struct ContentView: View {
                             ForEach(0..<3, id: \.self) { row in
                                 HStack(spacing: 10) {
                                     ForEach(0..<3, id: \.self) { col in
-                             
-                                    Image(AnimalPic)
-                                            .resizable()
-                                            .frame(width: 144, height: 144)
+                                    if row * 3 + col < correctButton {
+                                        Image(AnimalPic)
+                                                .resizable()
+                                                .frame(width: 144, height: 144)
+                                        }
                                     }
                                 }
                             }
