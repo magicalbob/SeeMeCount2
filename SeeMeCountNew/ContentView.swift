@@ -6,6 +6,9 @@
 //
 
 import SwiftUI
+import AVFoundation
+
+var player: AVAudioPlayer?
 
 struct ContentView: View {
     var body: some View {
@@ -13,7 +16,8 @@ struct ContentView: View {
             Color.black
                 .edgesIgnoringSafeArea(.all)
             
-            GeometryReader { geometry in
+            GeometryReader {
+                geometry in
                 // Access the width and height of the view
                 let width = geometry.size.width
                 let height = geometry.size.height
@@ -31,28 +35,30 @@ struct ContentView: View {
                 let x4 = (1.5 * height) - 200
                 let y4 = y1
                 
-                Button(action: { /* do something */ }) {
+                Button(action: {
+                    DoClickButton()
+                }) {
                     Image("No1")
                         .resizable()
                         .frame( width: 100, height: 100)
                 }
                 .position(x:x1 ,y: y1)
     
-                Button(action: { /* do something */ }) {
+                Button(action: { DoClickButton() }) {
                     Image("No2")
                         .resizable()
                         .frame( width: 100, height: 100)
                 }
                 .position(x:x2 ,y: y2)
     
-                Button(action: { /* do something */ }) {
+                Button(action: { DoClickButton() }) {
                     Image("No3")
                         .resizable()
                         .frame( width: 100, height: 100)
                 }
                 .position(x:x3 ,y: y3)
     
-                Button(action: { /* do something */ }) {
+                Button(action: { DoClickButton() }) {
                     Image("No4")
                         .resizable()
                         .frame( width: 100, height: 100)
@@ -69,21 +75,21 @@ struct ContentView: View {
                 let x9 = (x3 + x4) / 2
                 let y9 = y7
     
-                Button(action: { /* do something */ }) {
+                Button(action: { DoClickButton() }) {
                     Image("No7")
                         .resizable()
                         .frame( width: 100, height: 100)
                 }
                 .position(x:x7 ,y: y7)
     
-                Button(action: { /* do something */ }) {
+                Button(action: { DoClickButton() }) {
                     Image("No8")
                         .resizable()
                         .frame( width: 100, height: 100)
                 }
                 .position(x:x8 ,y: y8)
     
-                Button(action: { /* do something */ }) {
+                Button(action: { DoClickButton() }) {
                     Image("No9")
                         .resizable()
                         .frame( width: 100, height: 100)
@@ -97,14 +103,14 @@ struct ContentView: View {
                 let x6 = x4
                 let y6 = y5
     
-                Button(action: { /* do something */ }) {
+                Button(action: { DoClickButton() }) {
                     Image("No5")
                         .resizable()
                         .frame( width: 100, height: 100)
                 }
                 .position(x:x5 ,y: y5)
     
-                Button(action: { /* do something */ }) {
+                Button(action: { DoClickButton() }) {
                     Image("No6")
                         .resizable()
                         .frame( width: 100, height: 100)
@@ -112,6 +118,23 @@ struct ContentView: View {
                 .position(x:x6 ,y: y6)
             }
         }
+    }
+}
+
+func DoClickButton() {
+    guard let url = Bundle.main.url(forResource: "success01", withExtension: "mp3") else { return }
+
+    do {
+        try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+        try AVAudioSession.sharedInstance().setActive(true)
+
+        player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+
+        guard let player = player else { return }
+        player.play()
+
+    } catch let error {
+        print(error.localizedDescription)
     }
 }
 

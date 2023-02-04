@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C5EDECD298EDC4A0054FAD8 /* success02.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3C5EDEC8298EDC4A0054FAD8 /* success02.mp3 */; };
+		3C5EDECE298EDC4A0054FAD8 /* success03.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3C5EDEC9298EDC4A0054FAD8 /* success03.mp3 */; };
+		3C5EDECF298EDC4A0054FAD8 /* success05.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3C5EDECA298EDC4A0054FAD8 /* success05.mp3 */; };
+		3C5EDED0298EDC4A0054FAD8 /* success01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3C5EDECB298EDC4A0054FAD8 /* success01.mp3 */; };
+		3C5EDED1298EDC4A0054FAD8 /* success04.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3C5EDECC298EDC4A0054FAD8 /* success04.mp3 */; };
 		3C96F22A298834BC001615AD /* SeeMeCountNewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C96F229298834BC001615AD /* SeeMeCountNewApp.swift */; };
 		3C96F22C298834BC001615AD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C96F22B298834BC001615AD /* ContentView.swift */; };
 		3C96F22E298834BE001615AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C96F22D298834BE001615AD /* Assets.xcassets */; };
@@ -34,6 +39,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3C5EDEC8298EDC4A0054FAD8 /* success02.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = success02.mp3; path = SeeMeCountNew/success02.mp3; sourceTree = "<group>"; };
+		3C5EDEC9298EDC4A0054FAD8 /* success03.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = success03.mp3; path = SeeMeCountNew/success03.mp3; sourceTree = "<group>"; };
+		3C5EDECA298EDC4A0054FAD8 /* success05.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = success05.mp3; path = SeeMeCountNew/success05.mp3; sourceTree = "<group>"; };
+		3C5EDECB298EDC4A0054FAD8 /* success01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = success01.mp3; path = SeeMeCountNew/success01.mp3; sourceTree = "<group>"; };
+		3C5EDECC298EDC4A0054FAD8 /* success04.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = success04.mp3; path = SeeMeCountNew/success04.mp3; sourceTree = "<group>"; };
 		3C96F226298834BC001615AD /* SeeMeCountNew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeeMeCountNew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C96F229298834BC001615AD /* SeeMeCountNewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeMeCountNewApp.swift; sourceTree = "<group>"; };
 		3C96F22B298834BC001615AD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -75,6 +85,11 @@
 		3C96F21D298834BC001615AD = {
 			isa = PBXGroup;
 			children = (
+				3C5EDECB298EDC4A0054FAD8 /* success01.mp3 */,
+				3C5EDEC8298EDC4A0054FAD8 /* success02.mp3 */,
+				3C5EDEC9298EDC4A0054FAD8 /* success03.mp3 */,
+				3C5EDECC298EDC4A0054FAD8 /* success04.mp3 */,
+				3C5EDECA298EDC4A0054FAD8 /* success05.mp3 */,
 				3C96F228298834BC001615AD /* SeeMeCountNew */,
 				3C96F23A298834BE001615AD /* SeeMeCountNewTests */,
 				3C96F244298834BE001615AD /* SeeMeCountNewUITests */,
@@ -236,6 +251,11 @@
 			files = (
 				3C96F232298834BE001615AD /* Preview Assets.xcassets in Resources */,
 				3C96F22E298834BE001615AD /* Assets.xcassets in Resources */,
+				3C5EDECD298EDC4A0054FAD8 /* success02.mp3 in Resources */,
+				3C5EDECE298EDC4A0054FAD8 /* success03.mp3 in Resources */,
+				3C5EDED1298EDC4A0054FAD8 /* success04.mp3 in Resources */,
+				3C5EDECF298EDC4A0054FAD8 /* success05.mp3 in Resources */,
+				3C5EDED0298EDC4A0054FAD8 /* success01.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
