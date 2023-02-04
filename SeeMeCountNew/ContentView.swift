@@ -38,7 +38,7 @@ struct ContentView: View {
                 let y4 = y1
                 
                 Button(action: {
-                    DoClickButton()
+                    DoClickButton(buttonNo:1)
                 }) {
                     Image("No1")
                         .resizable()
@@ -46,21 +46,21 @@ struct ContentView: View {
                 }
                 .position(x:x1 ,y: y1)
     
-                Button(action: { DoClickButton() }) {
+                Button(action: { DoClickButton(buttonNo:2) }) {
                     Image("No2")
                         .resizable()
                         .frame( width: 100, height: 100)
                 }
                 .position(x:x2 ,y: y2)
     
-                Button(action: { DoClickButton() }) {
+                Button(action: { DoClickButton(buttonNo:3) }) {
                     Image("No3")
                         .resizable()
                         .frame( width: 100, height: 100)
                 }
                 .position(x:x3 ,y: y3)
     
-                Button(action: { DoClickButton() }) {
+                Button(action: { DoClickButton(buttonNo:4) }) {
                     Image("No4")
                         .resizable()
                         .frame( width: 100, height: 100)
@@ -77,21 +77,21 @@ struct ContentView: View {
                 let x9 = (x3 + x4) / 2
                 let y9 = y7
     
-                Button(action: { DoClickButton() }) {
+                Button(action: { DoClickButton(buttonNo:7) }) {
                     Image("No7")
                         .resizable()
                         .frame( width: 100, height: 100)
                 }
                 .position(x:x7 ,y: y7)
     
-                Button(action: { DoClickButton() }) {
+                Button(action: { DoClickButton(buttonNo:8) }) {
                     Image("No8")
                         .resizable()
                         .frame( width: 100, height: 100)
                 }
                 .position(x:x8 ,y: y8)
     
-                Button(action: { DoClickButton() }) {
+                Button(action: { DoClickButton(buttonNo:9) }) {
                     Image("No9")
                         .resizable()
                         .frame( width: 100, height: 100)
@@ -105,14 +105,14 @@ struct ContentView: View {
                 let x6 = x4
                 let y6 = y5
     
-                Button(action: { DoClickButton() }) {
+                Button(action: { DoClickButton(buttonNo:5) }) {
                     Image("No5")
                         .resizable()
                         .frame( width: 100, height: 100)
                 }
                 .position(x:x5 ,y: y5)
     
-                Button(action: { DoClickButton() }) {
+                Button(action: { DoClickButton(buttonNo:6) }) {
                     Image("No6")
                         .resizable()
                         .frame( width: 100, height: 100)
@@ -123,7 +123,7 @@ struct ContentView: View {
     }
 }
 
-func DoClickButton() {
+func DoClickButton(buttonNo: Int) {
     doPlay()
 }
 
