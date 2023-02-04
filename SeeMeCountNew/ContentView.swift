@@ -143,6 +143,11 @@ func doPlay() {
     } catch let error {
         print(error.localizedDescription)
     }
+    ResetCorrect()
+}
+
+func ResetCorrect(){
+    correctButton = Int.random(in: 1...9)
 }
 
 struct ContentView_Previews: PreviewProvider {
