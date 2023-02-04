@@ -31,25 +31,33 @@ struct ContentView: View {
                 let x4 = (1.5 * height) - 200
                 let y4 = y1
                 
-                Image("No1")
-                    .resizable()
-                    .frame( width: 100, height: 100)
-                    .position(x:x1 ,y: y1)
+                Button(action: { /* do something */ }) {
+                    Image("No1")
+                        .resizable()
+                        .frame( width: 100, height: 100)
+                }
+                .position(x:x1 ,y: y1)
     
-                Image("No2")
-                    .resizable()
-                    .frame( width: 100, height: 100)
-                    .position(x:x2 ,y: y2)
+                Button(action: { /* do something */ }) {
+                    Image("No2")
+                        .resizable()
+                        .frame( width: 100, height: 100)
+                }
+                .position(x:x2 ,y: y2)
     
-                Image("No3")
-                    .resizable()
-                    .frame( width: 100, height: 100)
-                    .position(x:x3 ,y: y3)
+                Button(action: { /* do something */ }) {
+                    Image("No3")
+                        .resizable()
+                        .frame( width: 100, height: 100)
+                }
+                .position(x:x3 ,y: y3)
     
-                Image("No4")
-                    .resizable()
-                    .frame( width: 100, height: 100)
-                    .position(x:x4 ,y: y4)
+                Button(action: { /* do something */ }) {
+                    Image("No4")
+                        .resizable()
+                        .frame( width: 100, height: 100)
+                }
+                .position(x:x4 ,y: y4)
     
                 // Row 3 (defined before Row 2)
                 let x7 = (x1 + x2) / 2
@@ -61,20 +69,26 @@ struct ContentView: View {
                 let x9 = (x3 + x4) / 2
                 let y9 = y7
     
-                Image("No7")
-                    .resizable()
-                    .frame( width: 100, height: 100)
-                    .position(x:x7 ,y: y7)
+                Button(action: { /* do something */ }) {
+                    Image("No7")
+                        .resizable()
+                        .frame( width: 100, height: 100)
+                }
+                .position(x:x7 ,y: y7)
     
-                Image("No8")
-                    .resizable()
-                    .frame( width: 100, height: 100)
-                    .position(x:x8 ,y: y8)
+                Button(action: { /* do something */ }) {
+                    Image("No8")
+                        .resizable()
+                        .frame( width: 100, height: 100)
+                }
+                .position(x:x8 ,y: y8)
     
-                Image("No9")
-                    .resizable()
-                    .frame( width: 100, height: 100)
-                    .position(x:x9 ,y: y9)
+                Button(action: { /* do something */ }) {
+                    Image("No9")
+                        .resizable()
+                        .frame( width: 100, height: 100)
+                }
+                .position(x:x9 ,y: y9)
                 
                 // Row 2
                 let x5 = x1
@@ -83,21 +97,23 @@ struct ContentView: View {
                 let x6 = x4
                 let y6 = y5
     
-                Image("No5")
-                    .resizable()
-                    .frame( width: 100, height: 100)
-                    .position(x:x5 ,y: y5)
+                Button(action: { /* do something */ }) {
+                    Image("No5")
+                        .resizable()
+                        .frame( width: 100, height: 100)
+                }
+                .position(x:x5 ,y: y5)
     
-                Image("No6")
-                    .resizable()
-                    .frame( width: 100, height: 100)
-                    .position(x:x6 ,y: y6)
-    
+                Button(action: { /* do something */ }) {
+                    Image("No6")
+                        .resizable()
+                        .frame( width: 100, height: 100)
+                }
+                .position(x:x6 ,y: y6)
             }
         }
     }
 }
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
