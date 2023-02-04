@@ -12,7 +12,6 @@ var player: AVAudioPlayer?
 var correctButton = Int.random(in: 1...9)
 var correctAnimal = Int.random(in: 1...9)
 
-
 struct ContentView: View {
     var body: some View {
         ZStack {
@@ -120,31 +119,34 @@ struct ContentView: View {
                 }
                 .position(x:x6 ,y: y6)
                 
-                let AnimalPic=String(format: "Pic%d",correctAnimal)
-                
-                VStack {
-                    Spacer()
-                    HStack {
-                        Spacer()
-                        VStack(spacing: 10) {
-                            ForEach(0..<3, id: \.self) { row in
-                                HStack(spacing: 10) {
-                                    ForEach(0..<3, id: \.self) { col in
-                                    if row * 3 + col < correctButton {
-                                        Image(AnimalPic)
-                                                .resizable()
-                                                .frame(width: 144, height: 144)
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        Spacer()
-                    }
-                    Spacer()
-                }
+                DrawAnimal()
             }
         }
+    }
+}
+
+func DrawAnimal() -> some View {
+    let AnimalPic = String(format: "Pic%d", correctAnimal)
+    return VStack {
+        Spacer()
+        HStack {
+            Spacer()
+            VStack(spacing: 10) {
+                ForEach(0..<3, id: \.self) { row in
+                    HStack(spacing: 10) {
+                        ForEach(0..<3, id: \.self) { col in
+                            if row * 3 + col < correctButton {
+                                Image(AnimalPic)
+                                    .resizable()
+                                    .frame(width: 144, height: 144)
+                            }
+                        }
+                    }
+                }
+            }
+            Spacer()
+        }
+        Spacer()
     }
 }
 
