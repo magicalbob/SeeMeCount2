@@ -117,6 +117,26 @@ struct ContentView: View {
                         .frame( width: 100, height: 100)
                 }
                 .position(x:x6 ,y: y6)
+                
+                VStack {
+                    Spacer()
+                    HStack {
+                        Spacer()
+                        VStack(spacing: 10) {
+                            ForEach(0..<3, id: \.self) { row in
+                                HStack(spacing: 10) {
+                                    ForEach(0..<3, id: \.self) { col in
+                                        Image("Pic1")
+                                            .resizable()
+                                            .frame(width: 144, height: 144)
+                                    }
+                                }
+                            }
+                        }
+                        Spacer()
+                    }
+                    Spacer()
+                }
             }
         }
     }
