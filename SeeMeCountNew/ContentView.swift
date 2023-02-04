@@ -129,7 +129,9 @@ func DoClickButton(buttonNo: Int) {
 }
 
 func doPlay() {
-    guard let url = Bundle.main.url(forResource: "success01", withExtension: "mp3") else { return }
+    let SuccessTune = String(format: "success0%d", Int.random(in: 1...5))
+    
+    guard let url = Bundle.main.url(forResource: SuccessTune, withExtension: "mp3") else { return }
 
     do {
         try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
