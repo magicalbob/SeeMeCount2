@@ -7,6 +7,7 @@
 
 import SwiftUI
 import AVFoundation
+import Dispatch
 
 var player: AVAudioPlayer?
 var correctButton = Int.random(in: 1...9)
@@ -60,7 +61,9 @@ struct SubContentView: View {
                 Button(action: {
                     if correctButton == 1 {
                         DoClickButton(buttonNo:1)
-                        self.isButtonPressed = false
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                            self.isButtonPressed = false
+                        }
                     }
                 }) {
                     Image("No1")
@@ -72,7 +75,9 @@ struct SubContentView: View {
                 Button(action: {
                     if correctButton == 2 {
                         DoClickButton(buttonNo:2)
-                        self.isButtonPressed = false
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                            self.isButtonPressed = false
+                        }
                     }
                 }) {
                     Image("No2")
@@ -84,7 +89,9 @@ struct SubContentView: View {
                 Button(action: {
                     if correctButton == 3 {
                         DoClickButton(buttonNo:3)
-                        self.isButtonPressed = false
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                            self.isButtonPressed = false
+                        }
                     }
                 }) {
                     Image("No3")
@@ -96,7 +103,9 @@ struct SubContentView: View {
                 Button(action: {
                     if correctButton == 4 {
                         DoClickButton(buttonNo:4)
-                        self.isButtonPressed = false
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                            self.isButtonPressed = false
+                        }
                     }
                 }) {
                     Image("No4")
@@ -118,7 +127,9 @@ struct SubContentView: View {
                 Button(action: {
                     if correctButton == 7 {
                         DoClickButton(buttonNo:7)
-                        self.isButtonPressed = false
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                            self.isButtonPressed = false
+                        }
                     }
                 }) {
                     Image("No7")
@@ -130,7 +141,9 @@ struct SubContentView: View {
                 Button(action: {
                     if correctButton == 8 {
                         DoClickButton(buttonNo:8)
-                        self.isButtonPressed = false
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                            self.isButtonPressed = false
+                        }
                     }
                 }) {
                     Image("No8")
@@ -142,7 +155,9 @@ struct SubContentView: View {
                 Button(action: {
                     if correctButton == 9 {
                         DoClickButton(buttonNo:9)
-                        self.isButtonPressed = false
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                            self.isButtonPressed = false
+                        }
                     }
                 }) {
                     Image("No9")
@@ -161,7 +176,9 @@ struct SubContentView: View {
                 Button(action: {
                     if correctButton == 5 {
                         DoClickButton(buttonNo:5)
-                        self.isButtonPressed = false
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                            self.isButtonPressed = false
+                        }
                     }
                 }) {
                     Image("No5")
@@ -173,7 +190,9 @@ struct SubContentView: View {
                 Button(action: {
                     if correctButton == 6 {
                         DoClickButton(buttonNo:6)
-                        self.isButtonPressed = false
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                            self.isButtonPressed = false
+                        }
                     }
                 }) {
                     Image("No6")
