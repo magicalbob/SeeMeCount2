@@ -13,6 +13,26 @@ var correctButton = Int.random(in: 1...9)
 var correctAnimal = Int.random(in: 1...9)
 
 struct ContentView: View {
+    @State private var isButtonPressed = false
+    
+    var body: some View {
+        VStack {
+            if isButtonPressed {
+                SubContentView(isButtonPressed: $isButtonPressed)
+            } else {
+                Button(action: {
+                    self.isButtonPressed = true
+                }) {
+                    Text("Press Me")
+                }
+            }
+        }
+    }
+}
+
+struct SubContentView: View {
+    @Binding var isButtonPressed: Bool
+
     var body: some View {
         ZStack {
             Color.black
@@ -38,7 +58,10 @@ struct ContentView: View {
                 let y4 = y1
                 
                 Button(action: {
-                    DoClickButton(buttonNo:1)
+                    if correctButton == 1 {
+                        DoClickButton(buttonNo:1)
+                        self.isButtonPressed = false
+                    }
                 }) {
                     Image("No1")
                         .resizable()
@@ -46,21 +69,36 @@ struct ContentView: View {
                 }
                 .position(x:x1 ,y: y1)
     
-                Button(action: { DoClickButton(buttonNo:2) }) {
+                Button(action: {
+                    if correctButton == 2 {
+                        DoClickButton(buttonNo:2)
+                        self.isButtonPressed = false
+                    }
+                }) {
                     Image("No2")
                         .resizable()
                         .frame( width: 100, height: 100)
                 }
                 .position(x:x2 ,y: y2)
     
-                Button(action: { DoClickButton(buttonNo:3) }) {
+                Button(action: {
+                    if correctButton == 3 {
+                        DoClickButton(buttonNo:3)
+                        self.isButtonPressed = false
+                    }
+                }) {
                     Image("No3")
                         .resizable()
                         .frame( width: 100, height: 100)
                 }
                 .position(x:x3 ,y: y3)
     
-                Button(action: { DoClickButton(buttonNo:4) }) {
+                Button(action: {
+                    if correctButton == 4 {
+                        DoClickButton(buttonNo:4)
+                        self.isButtonPressed = false
+                    }
+                }) {
                     Image("No4")
                         .resizable()
                         .frame( width: 100, height: 100)
@@ -77,21 +115,36 @@ struct ContentView: View {
                 let x9 = (x3 + x4) / 2
                 let y9 = y7
     
-                Button(action: { DoClickButton(buttonNo:7) }) {
+                Button(action: {
+                    if correctButton == 7 {
+                        DoClickButton(buttonNo:7)
+                        self.isButtonPressed = false
+                    }
+                }) {
                     Image("No7")
                         .resizable()
                         .frame( width: 100, height: 100)
                 }
                 .position(x:x7 ,y: y7)
     
-                Button(action: { DoClickButton(buttonNo:8) }) {
+                Button(action: {
+                    if correctButton == 8 {
+                        DoClickButton(buttonNo:8)
+                        self.isButtonPressed = false
+                    }
+                }) {
                     Image("No8")
                         .resizable()
                         .frame( width: 100, height: 100)
                 }
                 .position(x:x8 ,y: y8)
     
-                Button(action: { DoClickButton(buttonNo:9) }) {
+                Button(action: {
+                    if correctButton == 9 {
+                        DoClickButton(buttonNo:9)
+                        self.isButtonPressed = false
+                    }
+                }) {
                     Image("No9")
                         .resizable()
                         .frame( width: 100, height: 100)
@@ -105,14 +158,24 @@ struct ContentView: View {
                 let x6 = x4
                 let y6 = y5
     
-                Button(action: { DoClickButton(buttonNo:5) }) {
+                Button(action: {
+                    if correctButton == 5 {
+                        DoClickButton(buttonNo:5)
+                        self.isButtonPressed = false
+                    }
+                }) {
                     Image("No5")
                         .resizable()
                         .frame( width: 100, height: 100)
                 }
                 .position(x:x5 ,y: y5)
     
-                Button(action: { DoClickButton(buttonNo:6) }) {
+                Button(action: {
+                    if correctButton == 6 {
+                        DoClickButton(buttonNo:6)
+                        self.isButtonPressed = false
+                    }
+                }) {
                     Image("No6")
                         .resizable()
                         .frame( width: 100, height: 100)
