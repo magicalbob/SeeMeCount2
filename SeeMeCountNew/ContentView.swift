@@ -24,12 +24,13 @@ struct ContentView: View {
                 Button(action: {
                     self.isButtonPressed = true
                 }) {
-                    Text("Press Me")
+                    Image("go")
                 }
             }
         }
     }
 }
+
 
 struct SubContentView: View {
     @Binding var isButtonPressed: Bool
