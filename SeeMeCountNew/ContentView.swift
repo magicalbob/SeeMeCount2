@@ -117,7 +117,7 @@ struct SubContentView: View {
     
                 // Row 3 (defined before Row 2)
                 let x7 = (x1 + x2) / 2
-                let y7 = width / 1.5
+                let y7 = (width / 1.5) - 100
     
                 let x8 = (x2 + x3) / 2
                 let y8 = y7
