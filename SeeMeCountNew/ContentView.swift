@@ -17,14 +17,18 @@ struct ContentView: View {
     @State private var isButtonPressed = false
     
     var body: some View {
-        VStack {
-            if isButtonPressed {
-                SubContentView(isButtonPressed: $isButtonPressed)
-            } else {
-                Button(action: {
-                    self.isButtonPressed = true
-                }) {
-                    Image("go")
+        ZStack {
+            Color.black.edgesIgnoringSafeArea(.all)
+            
+            VStack {
+                if isButtonPressed {
+                    SubContentView(isButtonPressed: $isButtonPressed)
+                } else {
+                    Button(action: {
+                        self.isButtonPressed = true
+                    }) {
+                        Image("go")
+                    }
                 }
             }
         }
