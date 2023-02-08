@@ -8,6 +8,7 @@
 import SwiftUI
 import AVFoundation
 import Dispatch
+import Speech
 
 var player: AVAudioPlayer?
 var correctButton = Int.random(in: 1...9)
@@ -212,7 +213,15 @@ struct SubContentView: View {
     }
 }
 
+func SayAnimal() {
+    let synthesizer = AVSpeechSynthesizer()
+    let SpeechText=String(format:"%d",correctButton)
+    let utterance = AVSpeechUtterance(string:SpeechText)
+    synthesizer.speak(utterance)
+}
+
 func DrawAnimal() -> some View {
+    SayAnimal()
     let AnimalPic = String(format: "Pic%d", correctAnimal)
     return VStack {
         Spacer()
