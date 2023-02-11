@@ -273,8 +273,17 @@ func doPlay() {
 }
 
 func ResetCorrect(){
-    correctButton = Int.random(in: 1...9)
-    correctAnimal = Int.random(in: 1...9)
+    var newCorrectButton = Int.random(in: 1...9)
+    while newCorrectButton == correctButton {
+        newCorrectButton = Int.random(in: 1...9)
+    }
+    correctButton = newCorrectButton
+    
+    var newCorrectAnimal = Int.random(in: 1...9)
+    while newCorrectAnimal == correctAnimal {
+        newCorrectAnimal = Int.random(in: 1...9)
+    }
+    correctAnimal = newCorrectAnimal
 }
 
 struct ContentView_Previews: PreviewProvider {
