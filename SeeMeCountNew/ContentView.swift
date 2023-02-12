@@ -13,6 +13,7 @@ import Speech
 var player: AVAudioPlayer?
 var correctButton = Int.random(in: 1...9)
 var correctAnimal = Int.random(in: 1...9)
+var successChoice = Int.random(in: 1...5)
 
 struct ContentView: View {
     @State private var isButtonPressed = false
@@ -253,7 +254,12 @@ func DoClickButton(buttonNo: Int) {
 }
 
 func doPlay() {
-    let SuccessTune = String(format: "success0%d", Int.random(in: 1...5))
+    var newSuccessChoice = Int.random(in: 1...5)
+    while newSuccessChoice == successChoice {
+        newSuccessChoice = Int.random(in: 1...5)
+    }
+    successChoice = newSuccessChoice
+    let SuccessTune = String(format: "success0%d", successChoice)
     
     guard let url = Bundle.main.url(forResource: SuccessTune, withExtension: "mp3") else { return }
 
