@@ -17,6 +17,7 @@ var successChoice = Int.random(in: 1...5)
 
 struct ContentView: View {
     @State private var isButtonPressed = false
+    @State private var isFlashing = false
     // Add the AVSpeechSynthesizer as an instance variable
     private let synthesizer = AVSpeechSynthesizer()
     
@@ -37,24 +38,43 @@ struct ContentView: View {
                 }
             }
         }
+        .onAppear(perform: setupTimer)
+    }
+
+    func setupTimer() {
+        Timer.scheduledTimer(withTimeInterval: 15, repeats: true) { _ in
+            if self.isButtonPressed {
+                self.repeatSayAnimal()
+            }
+        }
+    }
+
+    func repeatSayAnimal() {
+        sayAnimal()
+        flashCorrectAnimal()
+    }
+
+    func flashCorrectAnimal() {
+        withAnimation(.easeInOut(duration: 0.5).repeatCount(3, autoreverses: true)) {
+            isFlashing.toggle()
+        }
     }
 
     func sayAnimal() {
         let speechText = String(format: "%d", correctButton)
         let utterance = AVSpeechUtterance(string: speechText)
 
-        // Set the default voice
         if let languageCode = NSLocale.current.languageCode {
             utterance.voice = AVSpeechSynthesisVoice(language: languageCode)
         }
 
-        // Use the instance variable synthesizer instead of a local one
         synthesizer.speak(utterance)
     }
 }
 
 struct SubContentView: View {
     @Binding var isButtonPressed: Bool
+    @State private var isFlashing = false
 
     var body: some View {
         ZStack {
@@ -63,7 +83,6 @@ struct SubContentView: View {
             
             GeometryReader {
                 geometry in
-                // Access the width and height of the view
                 let width = geometry.size.width
                 let height = geometry.size.height
                 
@@ -91,6 +110,7 @@ struct SubContentView: View {
                     Image("No1")
                         .resizable()
                         .frame( width: 100, height: 100)
+                        .opacity(isFlashing && correctButton == 1 ? 0.3 : 1)
                 }
                 .position(x:x1 ,y: y1)
     
@@ -105,9 +125,10 @@ struct SubContentView: View {
                     Image("No2")
                         .resizable()
                         .frame( width: 100, height: 100)
+                        .opacity(isFlashing && correctButton == 2 ? 0.3 : 1)
                 }
                 .position(x:x2 ,y: y2)
-    
+
                 Button(action: {
                     if correctButton == 3 {
                         DoClickButton(buttonNo:3)
@@ -119,6 +140,7 @@ struct SubContentView: View {
                     Image("No3")
                         .resizable()
                         .frame( width: 100, height: 100)
+                        .opacity(isFlashing && correctButton == 3 ? 0.3 : 1)
                 }
                 .position(x:x3 ,y: y3)
     
@@ -133,6 +155,7 @@ struct SubContentView: View {
                     Image("No4")
                         .resizable()
                         .frame( width: 100, height: 100)
+                        .opacity(isFlashing && correctButton == 4 ? 0.3 : 1)
                 }
                 .position(x:x4 ,y: y4)
     
@@ -157,6 +180,7 @@ struct SubContentView: View {
                     Image("No7")
                         .resizable()
                         .frame( width: 100, height: 100)
+                        .opacity(isFlashing && correctButton == 7 ? 0.3 : 1)
                 }
                 .position(x:x7 ,y: y7)
     
@@ -171,6 +195,7 @@ struct SubContentView: View {
                     Image("No8")
                         .resizable()
                         .frame( width: 100, height: 100)
+                        .opacity(isFlashing && correctButton == 8 ? 0.3 : 1)
                 }
                 .position(x:x8 ,y: y8)
     
@@ -185,6 +210,7 @@ struct SubContentView: View {
                     Image("No9")
                         .resizable()
                         .frame( width: 100, height: 100)
+                        .opacity(isFlashing && correctButton == 9 ? 0.3 : 1)
                 }
                 .position(x:x9 ,y: y9)
                 
@@ -206,6 +232,7 @@ struct SubContentView: View {
                     Image("No5")
                         .resizable()
                         .frame( width: 100, height: 100)
+                        .opacity(isFlashing && correctButton == 5 ? 0.3 : 1)
                 }
                 .position(x:x5 ,y: y5)
     
@@ -220,11 +247,28 @@ struct SubContentView: View {
                     Image("No6")
                         .resizable()
                         .frame( width: 100, height: 100)
+                        .opacity(isFlashing && correctButton == 6 ? 0.3 : 1)
                 }
                 .position(x:x6 ,y: y6)
                 
                 DrawAnimal()
+                    .opacity(isFlashing ? 0.3 : 1) // Add this line
             }
+        }
+        .onAppear(perform: setupTimer) // Add this line
+    }
+
+    func setupTimer() { // Add this function
+        Timer.scheduledTimer(withTimeInterval: 15, repeats: true) { _ in
+            if self.isButtonPressed {
+                self.repeatFlashNumber()
+            }
+        }
+    }
+
+    func repeatFlashNumber() { // Add this function
+        withAnimation(.easeInOut(duration: 0.5).repeatCount(3, autoreverses: true)) {
+            isFlashing.toggle()
         }
     }
 }
