@@ -266,11 +266,16 @@ struct SubContentView: View {
         }
     }
 
-    func repeatFlashNumber() { // Add this function
-        withAnimation(.easeInOut(duration: 0.5).repeatCount(3, autoreverses: true)) {
+    func repeatFlashNumber() {
+        withAnimation(.easeInOut(duration: 0.5).repeatCount(3, autoreverses: true).delay(0)) {
             isFlashing.toggle()
         }
+        // Add a completion handler to reset isFlashing back to false
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            isFlashing = false
+        }
     }
+
 }
 
 func DrawAnimal() -> some View {
