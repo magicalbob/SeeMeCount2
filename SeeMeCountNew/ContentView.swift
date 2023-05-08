@@ -17,6 +17,8 @@ var successChoice = Int.random(in: 1...5)
 
 struct ContentView: View {
     @State private var isButtonPressed = false
+    // Add the AVSpeechSynthesizer as an instance variable
+    private let synthesizer = AVSpeechSynthesizer()
     
     var body: some View {
         ZStack {
@@ -28,6 +30,7 @@ struct ContentView: View {
                 } else {
                     Button(action: {
                         self.isButtonPressed = true
+                        sayAnimal()
                     }) {
                         Image("go")
                     }
@@ -35,8 +38,20 @@ struct ContentView: View {
             }
         }
     }
-}
 
+    func sayAnimal() {
+        let speechText = String(format: "%d", correctButton)
+        let utterance = AVSpeechUtterance(string: speechText)
+
+        // Set the default voice
+        if let languageCode = NSLocale.current.languageCode {
+            utterance.voice = AVSpeechSynthesisVoice(language: languageCode)
+        }
+
+        // Use the instance variable synthesizer instead of a local one
+        synthesizer.speak(utterance)
+    }
+}
 
 struct SubContentView: View {
     @Binding var isButtonPressed: Bool
@@ -214,15 +229,7 @@ struct SubContentView: View {
     }
 }
 
-func SayAnimal() {
-    let synthesizer = AVSpeechSynthesizer()
-    let SpeechText=String(format:"%d",correctButton)
-    let utterance = AVSpeechUtterance(string:SpeechText)
-    synthesizer.speak(utterance)
-}
-
 func DrawAnimal() -> some View {
-    SayAnimal()
     let AnimalPic = String(format: "Pic%d", correctAnimal)
     return VStack {
         Spacer()
@@ -297,4 +304,3 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-
